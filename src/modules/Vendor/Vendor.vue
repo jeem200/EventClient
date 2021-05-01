@@ -5,7 +5,7 @@
       <v-col>
           <v-text-field
             label="Vendor Name"
-            value="Vendor Name"
+          
             v-model="vendor.VendorName"
             outlined
           >
@@ -19,10 +19,32 @@
             outlined
           >
           </v-text-field>
-      </v-col>
+       </v-col>
 
     </v-row>
     <v-row>
+              
+      <v-col>
+          <v-text-field
+            label="Contact Number"
+            value="0"
+            v-model="vendor.ContactNumber"
+            outlined
+          >
+          </v-text-field>
+      </v-col>
+              <v-col>
+                    <v-textarea
+                        outlined
+                        v-model="vendor.Address"
+                      
+                        label="Address"
+                        value=""
+                    >
+                    </v-textarea>
+                </v-col> 
+    </v-row>
+    <!-- <v-row>
       <v-col>
           <v-app-bar
             color="grey lighten-4 black--text"
@@ -95,7 +117,7 @@
               </template>
             </v-simple-table>
       </v-col>
-    </v-row>
+    </v-row> -->
     <v-row>
         <v-btn
           dark
@@ -107,7 +129,7 @@
         </v-btn>
         {{vendor}}
     </v-row>
-    <v-dialog
+    <!-- <v-dialog
       width="1200"
       v-model="dialog"
       fullscreen
@@ -119,17 +141,17 @@
         @save="saveService"
         @close="closeModal"
       />
-    </v-dialog>
+    </v-dialog> -->
   </v-container>
 </template>
 
 <script>
 
 
-import ServiceAddForm from './ServiceAddForm.vue'
+//import ServiceAddForm from './ServiceAddForm.vue'
 import axios from 'axios'
   export default {
-    components:{ ServiceAddForm },
+//    components:{ ServiceAddForm },
     data () {
       return {
         dialog: false,
@@ -140,6 +162,9 @@ import axios from 'axios'
         vendor:{
           VendorName:'Vendor Name',
           NoOfCollab:0,
+          Capacity:0,
+          ContactNumber:'',
+          Address:'',
           serviceType: [],
         }
       }
